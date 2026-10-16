@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Start here · 6 · Making it real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#ffffff; --sunk:#f7f8f9;
+  --ink:#43525a; --ink-strong:#303e44; --muted:#576a73; --stone:#66747b;
+  --hair:#d5dde1; --hair-soft:#eef1f2; --edge:#7b8990; --accent:#477ba8;
+  --focus:#303e44;
+  --sans:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shell:74rem;
+}
+[data-g="grounding"]{--g:#477ba8;}
+[data-g="rights"]{--g:#567a9d;}
+[data-g="accommodations"]{--g:#347cb1;}
+[data-g="variability"]{--g:#617993;}
+[data-g="standards"]{--g:#69788b;}
+[data-g="institutions"]{--g:#717781;}
+[data-g="sectors"]{--g:#767677;}
+[data-g="services"]{--g:#303e44;}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3{color:var(--ink-strong);line-height:1.25;font-weight:600;margin:0;}
+p{margin:0 0 .85em;}
+a{color:var(--ink-strong);text-underline-offset:3px;text-decoration-thickness:1px;}
+a:hover{text-decoration-thickness:2px;}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;
+  box-shadow:0 0 0 6px rgba(255,255,255,.95);border-radius:3px;}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink-strong);color:#fff;
+  padding:12px 18px;z-index:60;text-decoration:none;border-radius:0 0 4px 0;}
+.skip:focus{left:0;}
+
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 20px;}
+.masthead{padding:52px 0 12px;}
+.eyebrow{font-size:11px;letter-spacing:.16em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--muted);margin:0 0 14px;}
+h1{font-size:clamp(1.85rem,4.2vw,2.7rem);letter-spacing:-.01em;max-width:24ch;}
+h1 em{display:block;font-style:italic;font-weight:400;color:var(--muted);margin-top:.15em;}
+.rule{height:3px;width:64px;background:var(--accent);margin:20px 0 22px;border-radius:2px;}
+.lede{font-size:1.09rem;max-width:64ch;}
+.orient{max-width:64ch;color:var(--muted);font-size:.97rem;
+  border-left:3px solid var(--hair);padding:2px 0 2px 16px;margin:22px 0 0;}
+
+.ways{margin:38px 0 0;padding:0;list-style:none;display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:64rem;}
+.ways li{border:1px solid var(--hair-soft);border-radius:8px;padding:16px 18px;background:var(--sunk);}
+.ways .lt{display:block;margin-bottom:6px;}
+.ways p{margin:0;font-size:.95rem;color:var(--ink);}
+
+.sec-mark,.lt,.lbl{font-size:10px;letter-spacing:.14em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--stone);}
+.sec-mark{margin:0 0 10px;display:block;}
+
+main{padding:56px 0 0;}
+.note{max-width:66ch;margin:0 0 44px;padding:18px 20px 8px;border:1px solid var(--hair);border-left:4px solid var(--ink-strong);border-radius:8px;background:var(--sunk);}
+.note h2{font-size:1.05rem;margin:0 0 10px;}
+.note p{font-size:.96rem;}
+.case{max-width:66ch;}
+.case h2{font-size:1.4rem;margin:0 0 14px;}
+
+nav.stops{margin:46px 0 0;max-width:66ch;}
+nav.stops ol{margin:10px 0 0;padding:0 0 0 1.4em;columns:2;column-gap:34px;}
+nav.stops li{break-inside:avoid;margin:0 0 6px;font-size:.95rem;}
+
+.stop{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;scroll-margin-top:20px;}
+.stop h2{font-size:1.4rem;display:flex;align-items:baseline;gap:14px;}
+.stop h2 .n{font-size:.8rem;letter-spacing:.14em;color:var(--stone);font-weight:600;}
+.where{color:var(--muted);font-style:italic;margin:10px 0 18px;}
+.q{border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:0 0 18px;font-size:1.04rem;color:var(--ink-strong);}
+.q .lbl{display:block;margin-bottom:4px;}
+.read{margin:0 0 18px;}
+.read .lbl{display:block;margin-bottom:8px;}
+.read ul{list-style:none;padding:0;margin:0;}
+.read li{padding:0 0 0 18px;position:relative;margin:0 0 9px;font-size:.96rem;}
+.read li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:100px;background:var(--g,var(--stone));}
+.read li a{font-weight:500;}
+.good .lbl{display:block;margin-bottom:6px;}
+.good{background:var(--sunk);border-radius:8px;padding:16px 18px 6px;}
+.contested{margin:14px 0 0;font-size:.95rem;color:var(--muted);}
+.contested .lbl{color:var(--stone);margin-right:6px;}
+
+.after{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;}
+.after h2{font-size:1.4rem;margin:0 0 12px;}
+.after ul{padding-left:1.2em;margin:8px 0 0;}
+.after li{margin:0 0 6px;}
+
+.bib-h{font-size:1rem;margin:30px 0 10px;color:var(--muted);font-weight:600;}
+ol.bib{padding-left:2.1em;margin:0;max-width:70ch;}
+ol.bib li{margin:0 0 11px;font-size:.92rem;line-height:1.5;padding-left:.3em;scroll-margin-top:20px;}
+.ext{white-space:nowrap;}
+.exti{display:inline-block;width:.68em;height:.68em;margin-left:.3em;vertical-align:-.02em;
+  background-color:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;}
+
+footer{margin:64px 0 0;border-top:1px solid var(--hair);padding:26px 0 60px;color:var(--muted);font-size:.88rem;}
+.meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;}
+
+@media (max-width:640px){
+  nav.stops ol{columns:1;}
+}
+@media (max-width:420px){
+  body{font-size:16px;}
+  .wrap{padding:0 16px;}
+}
+@media (prefers-contrast:more){
+  :root{--hair:#5c6a71;--hair-soft:#9aa5ab;--muted:#3c4a52;--stone:#4a575e;}
+}
+@media (forced-colors:active){
+  .read li::before,.rule,.exti{forced-color-adjust:none;background:CanvasText;}
+}
+@media print{
+  .skip{display:none !important;}
+  body{font-size:11pt;}
+  .stop,.good{break-inside:avoid;}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#555;}
+}
+
+.wrap{padding:0;}
+.stop{border-top:0;padding:0;margin-top:0;}
+.note{margin:0 0 32px;}
+</style>
+</head>
+<body data-embed="stop-6">
+<div class="wrap">
+<main>
+<section class="stop" id="stop-6" aria-labelledby="h-6">
+  <h2 id="h-6"><span class="n">6</span>Making it real</h2>
+  <p class="where">Weeks five to twelve. The letter is issued. Now it has to happen.</p>
+  <div class="q"><span class="lbl">The question</span>An accommodation has been approved. What has to occur, and who has to do it, for it to exist on the day?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">Working with Accommodation Offices and Access Advisors</a> &mdash; the implementation gap, in which an approved accommodation is recorded and then not delivered, and what a referral has to carry to be usable.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">Accommodated Exams and Assessment Logistics</a> &mdash; this time for its second half: booking, invigilator training, communication with learners and instructors, and the decisions required when timing, technology or a person&rsquo;s health fails during an exam.</li>
+      <li data-g="standards"><a href="https://www.accessiblelearninglabs.com/standards-and-technical-practice" target="_top">Delivering Accommodated Exams in a Learning Platform</a> &mdash; the midterm is online. Platform time settings, lockdown browsers and proctoring can conflict with a learner&rsquo;s set-up; a test routine run in advance catches it.</li>
+      <li data-g="standards"><a href="https://www.accessiblelearninglabs.com/standards-and-technical-practice" target="_top">Interpreting, Live Captioning, Note-Taking and Alternate Formats</a> &mdash; not needed in Rowan&rsquo;s case, and read anyway, because the same lesson applies: a service arranged late, or without the materials, may not provide the access it was approved to provide.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">Funding Routes for Disability-Related Supports and Equipment</a> &mdash; for the cases where an approved accommodation depends on something the learner has to pay for.</li>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change" target="_top">Training and Supervising Student Access Staff</a> &mdash; the invigilator or laboratory aide who is in the room on the day, and what they need to be able to do on a first shift.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>Delivery began before the letter. Between the request in week two and the letter in week five, Rowan was told in writing what had been agreed so far and what was still open, and the deadline arrangement was applied in the meantime; an accommodation process that leaves a person without an answer while it runs is one of the ways the process stalls (source 2).</p>
+    <p>Every line of the letter has an owner, a date and a check. The instructor confirms the deadline arrangement on the course site, so Rowan does not have to ask twice. The exam service books the midterm with extended time and runs the platform check with Rowan&rsquo;s own set-up two weeks out, because conformance to the accessibility guidelines is defined against the assistive technology a person actually uses, and a locked-down browser that blocks it is a failure of the exam, not of the learner (sources 28, 29). The laboratory coordinator holds the deferred slot, and the teaching assistant on the day of the practical knows the rule for calling it. In week seven the advisor checks that the midterm happened as approved, and the file is not closed until each line has been delivered or declined with a reason. An accommodation that is recorded and not delivered has discharged nothing (source 17).</p>
+  </div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+  function send(){ try{ parent.postMessage({startHereEmbed:true, id:document.body.dataset.embed, height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  window.addEventListener('load',send); window.addEventListener('resize',send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+})();
+</script>
+</body>
+</html>

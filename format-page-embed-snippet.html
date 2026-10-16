@@ -1,0 +1,19 @@
+<!-- One iframe per section, in order. Replace BASE with the address where the files are published. -->
+<iframe src="BASE/case.html"   title="The case"                  class="sh-embed" loading="lazy" style="width:100%;border:0;height:900px"></iframe>
+<iframe src="BASE/stop-1.html" title="1 · The frame"             class="sh-embed" loading="lazy" style="width:100%;border:0;height:1100px"></iframe>
+<iframe src="BASE/stop-2.html" title="2 · What is owed"          class="sh-embed" loading="lazy" style="width:100%;border:0;height:1300px"></iframe>
+<iframe src="BASE/stop-3.html" title="3 · Before anyone asks"    class="sh-embed" loading="lazy" style="width:100%;border:0;height:1200px"></iframe>
+<iframe src="BASE/stop-4.html" title="4 · When someone asks"     class="sh-embed" loading="lazy" style="width:100%;border:0;height:1600px"></iframe>
+<iframe src="BASE/stop-5.html" title="5 · The hard call"         class="sh-embed" loading="lazy" style="width:100%;border:0;height:1700px"></iframe>
+<iframe src="BASE/stop-6.html" title="6 · Making it real"        class="sh-embed" loading="lazy" style="width:100%;border:0;height:1400px"></iframe>
+<iframe src="BASE/stop-7.html" title="7 · Changing the institution" class="sh-embed" loading="lazy" style="width:100%;border:0;height:1500px"></iframe>
+
+<!-- Lets each frame set its own height so there is no inner scrolling. Place once, after the frames. -->
+<script>
+window.addEventListener('message',function(e){
+  var d=e.data; if(!d||!d.startHereEmbed) return;
+  document.querySelectorAll('iframe.sh-embed').forEach(function(f){
+    if(f.src.indexOf(d.id+'.html')>-1) f.style.height=(d.height+8)+'px';
+  });
+});
+</script>
