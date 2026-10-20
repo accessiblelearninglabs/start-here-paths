@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Measuring what matters · The practitioner's path</title>
+<meta name="description" content="The practitioner&#x27;s path: one accommodation request followed from the day it reaches an advisor&#x27;s desk to the change it leaves in the institution, with the resources that answer each question along the way." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#ffffff; --sunk:#f7f8f9;
+  --ink:#43525a; --ink-strong:#303e44; --muted:#576a73; --stone:#66747b;
+  --hair:#d5dde1; --hair-soft:#eef1f2; --edge:#7b8990; --accent:#477ba8;
+  --focus:#303e44;
+  --sans:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shell:74rem;
+}
+[data-g="grounding"]{--g:#477ba8;}
+[data-g="rights"]{--g:#567a9d;}
+[data-g="accommodations"]{--g:#347cb1;}
+[data-g="variability"]{--g:#617993;}
+[data-g="standards"]{--g:#69788b;}
+[data-g="institutions"]{--g:#717781;}
+[data-g="sectors"]{--g:#767677;}
+[data-g="services"]{--g:#303e44;}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3{color:var(--ink-strong);line-height:1.25;font-weight:600;margin:0;}
+p{margin:0 0 .85em;}
+a{color:var(--ink-strong);text-underline-offset:3px;text-decoration-thickness:1px;}
+a:hover{text-decoration-thickness:2px;}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;
+  box-shadow:0 0 0 6px rgba(255,255,255,.95);border-radius:3px;}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink-strong);color:#fff;
+  padding:12px 18px;z-index:60;text-decoration:none;border-radius:0 0 4px 0;}
+.skip:focus{left:0;}
+
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 20px;}
+.masthead{padding:52px 0 12px;}
+.eyebrow{font-size:11px;letter-spacing:.16em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--muted);margin:0 0 14px;}
+h1{font-size:clamp(1.85rem,4.2vw,2.7rem);letter-spacing:-.01em;max-width:24ch;}
+h1 em{display:block;font-style:italic;font-weight:400;color:var(--muted);margin-top:.15em;}
+.rule{height:3px;width:64px;background:var(--accent);margin:20px 0 22px;border-radius:2px;}
+.lede{font-size:1.09rem;max-width:64ch;}
+.orient{max-width:64ch;color:var(--muted);font-size:.97rem;
+  border-left:3px solid var(--hair);padding:2px 0 2px 16px;margin:22px 0 0;}
+
+.ways{margin:38px 0 0;padding:0;list-style:none;display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:64rem;}
+.ways li{border:1px solid var(--hair-soft);border-radius:8px;padding:16px 18px;background:var(--sunk);}
+.ways .lt{display:block;margin-bottom:6px;}
+.ways p{margin:0;font-size:.95rem;color:var(--ink);}
+
+.sec-mark,.lt,.lbl{font-size:10px;letter-spacing:.14em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--stone);}
+.sec-mark{margin:0 0 10px;display:block;}
+
+main{padding:56px 0 0;}
+.note{max-width:66ch;margin:0 0 44px;padding:18px 20px 8px;border:1px solid var(--hair);border-left:4px solid var(--ink-strong);border-radius:8px;background:var(--sunk);}
+.note h2{font-size:1.05rem;margin:0 0 10px;}
+.note p{font-size:.96rem;}
+.case{max-width:66ch;}
+.case h2{font-size:1.4rem;margin:0 0 14px;}
+
+nav.stops{margin:46px 0 0;max-width:66ch;}
+nav.stops ol{margin:10px 0 0;padding:0 0 0 1.4em;columns:2;column-gap:34px;}
+nav.stops li{break-inside:avoid;margin:0 0 6px;font-size:.95rem;}
+
+.stop{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;scroll-margin-top:20px;}
+.stop h2{font-size:1.4rem;display:flex;align-items:baseline;gap:14px;}
+.stop h2 .n{font-size:.8rem;letter-spacing:.14em;color:var(--stone);font-weight:600;}
+.where{color:var(--muted);font-style:italic;margin:10px 0 18px;}
+.q{border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:0 0 18px;font-size:1.04rem;color:var(--ink-strong);}
+.q .lbl{display:block;margin-bottom:4px;}
+.read{margin:0 0 18px;}
+.read .lbl{display:block;margin-bottom:8px;}
+.read ul{list-style:none;padding:0;margin:0;}
+.read li{padding:0 0 0 18px;position:relative;margin:0 0 9px;font-size:.96rem;}
+.read li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:100px;background:var(--g,var(--stone));}
+.read li a{font-weight:500;}
+.good .lbl{display:block;margin-bottom:6px;}
+.good{background:var(--sunk);border-radius:8px;padding:16px 18px 6px;}
+.contested{margin:14px 0 0;font-size:.95rem;color:var(--muted);}
+.contested .lbl{color:var(--stone);margin-right:6px;}
+
+.after{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;}
+.after h2{font-size:1.4rem;margin:0 0 12px;}
+.after ul{padding-left:1.2em;margin:8px 0 0;}
+.after li{margin:0 0 6px;}
+
+.bib-h{font-size:1rem;margin:30px 0 10px;color:var(--muted);font-weight:600;}
+ol.bib{padding-left:2.1em;margin:0;max-width:70ch;}
+ol.bib li{margin:0 0 11px;font-size:.92rem;line-height:1.5;padding-left:.3em;scroll-margin-top:20px;}
+.ext{white-space:nowrap;}
+.exti{display:inline-block;width:.68em;height:.68em;margin-left:.3em;vertical-align:-.02em;
+  background-color:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;}
+
+footer{margin:64px 0 0;border-top:1px solid var(--hair);padding:26px 0 60px;color:var(--muted);font-size:.88rem;}
+.meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;}
+
+@media (max-width:640px){
+  nav.stops ol{columns:1;}
+}
+@media (max-width:420px){
+  body{font-size:16px;}
+  .wrap{padding:0 16px;}
+}
+@media (prefers-contrast:more){
+  :root{--hair:#5c6a71;--hair-soft:#9aa5ab;--muted:#3c4a52;--stone:#4a575e;}
+}
+@media (forced-colors:active){
+  .read li::before,.rule,.exti{forced-color-adjust:none;background:CanvasText;}
+}
+@media print{
+  .skip{display:none !important;}
+  body{font-size:11pt;}
+  .stop,.good{break-inside:avoid;}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#555;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#path">Skip to the path</a>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Accessible Learning Labs &middot; Start here path &middot; The practitioner&rsquo;s path</p>
+  <h1>The chemistry sets the pace. <em>Not the room.</em></h1>
+  <div class="rule"></div>
+  <p class="lede">The practitioner is the person whose judgement shapes how access happens. This path follows one, an accessibility advisor, and one accommodation request from the day it reaches the advisor&rsquo;s desk to the change it leaves behind in the institution. Seven stops; at each, the question the practitioner faces, the resources that answer it, and what a good decision looks like. A workplace accommodation specialist or a patient accessibility coordinator meets the same questions at different milestones. It is a way into the <a href="https://www.accessiblelearninglabs.com/landscape">landscape of seventy-three knowledge resources</a> for anyone who would rather begin with a case than with a map.</p>
+  <p class="orient">Determinations in individual accommodation cases rest with accessibility advisors, accommodation offices and legal counsel; this path is offered in support of that work, never in place of it.</p>
+
+  <ul class="ways" aria-label="Three ways to read this">
+    <li><span class="lt">Fifteen minutes</span><p>Read the path through. It stands on its own and does not require a single link to be opened.</p></li>
+    <li><span class="lt">An hour</span><p>Read the path, then open the stop that matches where you are, with its resources beside it.</p></li>
+    <li><span class="lt">A term</span><p>Use the seven stops as a reading order through the landscape. Taken in sequence, their resources touch every group on the map.</p></li>
+  </ul>
+</header>
+
+<main id="path">
+
+<aside class="note" aria-labelledby="h-note">
+  <h2 id="h-note">A note on confidentiality</h2>
+  <p>Rowan is not a real person. The case that follows is a composite of experiences common in post-secondary accommodation practice, written so that the reasoning behind an accommodation decision can be shown from beginning to end. No detail is drawn from a real learner, a real file or a real course.</p>
+  <p>Real accommodation records are confidential. They are held by the office that creates them, disclosed only to the extent needed to deliver the accommodation, and protected by provincial privacy legislation (source <a href="#s30">30</a>). That responsibility applies at all times and to everyone who touches a case: an advisor, an instructor, an invigilator, a colleague. A real case is never discussed, taught from or written about in a form that could identify the person, and the same applies to anyone who uses this path as a model.</p>
+</aside>
+
+<section class="case" aria-labelledby="h-case">
+  <span class="sec-mark">The case</span>
+  <h2 id="h-case">Rowan, second year, a laboratory course and a teaching appointment, one term</h2>
+  <p>Rowan is in the second year of a science degree. This term includes a chemistry course with a three-hour weekly laboratory, a midterm and a final exam. The laboratory component ends in a timed practical in week twelve. Rowan also holds a teaching assistant appointment in a first-year laboratory section, six hours a week, made by the department.</p>
+  <p>For Rowan, most weeks are manageable. Some are not: a difficult stretch arrives with little warning, lasts several days, and makes standing for long periods, concentrating and keeping to a fixed schedule hard to sustain. Rowan registered with the access office in first year and holds an accommodation letter for extended time on exams. Nothing in that letter speaks to attendance or deadlines, because nothing in first year required it.</p>
+  <p>In week two, Rowan writes to the office. The laboratory allows one missed session before marks are lost, and a difficult stretch in September has already used it. Rowan asks for three things: that missed laboratories not be penalised, that assignment deadlines be extended when a difficult stretch comes, and that the timed practical be rescheduled or extended if one falls on the day. The file holds a specialist&rsquo;s letter from three years ago. It confirms that Rowan&rsquo;s health is ongoing and varies over time, and recommends &ldquo;flexibility with deadlines and attendance.&rdquo; The request says nothing about the teaching appointment, which is held by the department under a different process.</p>
+  <p>The file lands with an advisor. What follows is the work.</p>
+</section>
+
+<nav class="stops" aria-label="The seven stops">
+  <span class="sec-mark">The seven stops</span>
+  <ol>
+    <li><a href="#stop-1">The frame</a></li>
+    <li><a href="#stop-2">What is owed</a></li>
+    <li><a href="#stop-3">Before anyone asks</a></li>
+    <li><a href="#stop-4">When someone asks</a></li>
+    <li><a href="#stop-5">The hard call</a></li>
+    <li><a href="#stop-6">Making it real</a></li>
+    <li><a href="#stop-7">Changing the institution</a></li>
+  </ol>
+</nav>
+
+<section class="stop" id="stop-1" aria-labelledby="h-1">
+  <h2 id="h-1"><span class="n">1</span>The frame</h2>
+  <p class="where">Week two. A letter, three requests and a course outline, read before anything is decided.</p>
+  <div class="q"><span class="lbl">The question</span>What is in front of me: a letter, a set of barriers, or a course design? And what is my part in it?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Why Universal Design Never Eliminates Individual Accommodation</a> &mdash; the anchor of the whole landscape. Rowan&rsquo;s request is not a failure of the course&rsquo;s design and not an administrative residue; it is the point at which a duty owed to a person is met by skilled practice.</li>
+      <li data-g="grounding"><a href="https://www.accessiblelearninglabs.com/grounding">Functional Impact in Academic Tasks</a> &mdash; starts from what the course asks each week, not from the diagnosis. Sustained standing at a bench, timed recall, deadlines across a term: this is where the course meets what a difficult stretch does.</li>
+      <li data-g="grounding"><a href="https://www.accessiblelearninglabs.com/grounding">Models of Disability as Design Decisions</a> &mdash; the model implicit in how a file is read decides what gets built. A medical reading sees only the letter; an interactional reading sees the letter meeting the laboratory.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>Before anyone is written to, the request is rewritten in the file as barriers met in tasks: a fixed attendance rule meeting capacity that varies from week to week; fixed deadlines meeting the same; a timed practical on a single fixed day meeting the same. This is the frame the International Classification of Functioning supplies, in which functioning is the interaction of a health condition with activities, participation and the environment rather than a property of the person (source <a href="#s19">19</a>), and it is the frame disability studies has long insisted on: a barrier is named as a feature of the environment and the institution, not as a deficit in the learner (sources <a href="#s26">26</a>, <a href="#s27">27</a>). The letter stays in the file. The barriers go to work.</p>
+    <p>One barrier is easy to miss. The Episodic Disability Framework treats uncertainty about the future as a dimension of disability in its own right, beside symptoms, daily activities and social inclusion (source <a href="#s20">20</a>). Rowan&rsquo;s third request, for what happens if a difficult stretch falls on the day of the practical, is a response to that uncertainty, and the course outline offers nothing to answer it.</p>
+    <p>The advisor&rsquo;s part is named at the same time. The advisor decides accommodation, with the instructor and within policy. The advisor does not decide what chemistry requires. Keeping those two apart is what makes the fifth stop possible.</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-2" aria-labelledby="h-2">
+  <h2 id="h-2"><span class="n">2</span>What is owed</h2>
+  <p class="where">Week two, the same day. Before the reply to Rowan is written.</p>
+  <div class="q"><span class="lbl">The question</span>What does the institution owe Rowan, what is Rowan asked to do in return, and what is the instructor&rsquo;s part?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">The Duty to Accommodate in Learning Design</a> &mdash; the procedural duty and the substantive one, the unified test for a standard, and accommodation to the point of undue hardship, in the Canadian frame.</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">The Case Law Behind Accommodation in Education</a> &mdash; six decisions in plain language. Three carry this stop: Renaud, which makes the search for accommodation a shared responsibility in which the person seeking it must also take part (source <a href="#s2">2</a>); Meiorin, which sets the test a standard must meet and places on the institution the burden of showing that further accommodation would be undue hardship (source <a href="#s1">1</a>); and Moore, in which the Supreme Court of Canada described the service owed as meaningful access to education (source <a href="#s6">6</a>).</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">How a University Accommodation Policy Works</a> &mdash; the university&rsquo;s own policy, read as the brief: who is eligible, who decides, what an instructor is responsible for, and how a disagreement is resolved.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">The Interactive Process in Learning Settings</a> &mdash; what good faith requires on each side, and the points at which the process stalls: no response, an unworkable offer, or a request handled as a complaint.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>The reply to Rowan opens a process rather than issuing a ruling. It says what the office will do and by when, what it needs from Rowan, and that the instructor will be part of it. The duty it answers is the duty to accommodate under the provincial Human Rights Code (source <a href="#s7">7</a>), and it is a positive duty: equal access to a public service can require the institution to take measures, not only to refrain from excluding (source <a href="#s4">4</a>). The existing letter for extended time settles nothing about the three new requests. A blanket rule is no answer to a person; the duty calls for individual assessment (source <a href="#s3">3</a>), so each barrier is looked at on its own terms, with the focus on needs and limitations rather than on the diagnosis (source <a href="#s9">9</a>).</p>
+    <p class="contested"><span class="lbl">Where practice disagrees</span>Whether the laboratory already missed in September can be covered by an accommodation granted in week two. Accommodation after a deadline, test or course has already passed is treated in human rights guidance as a question of its own rather than as the ordinary case (source <a href="#s9">9</a>), and the shared responsibility that Renaud describes includes bringing a need forward in time for it to be met (source <a href="#s2">2</a>). This path treats the September absence under the course&rsquo;s own rule and the instructor&rsquo;s discretion, runs the accommodation forward from the request, and writes down why. Others would reach back. Either way, the reasoning belongs in the record.</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-3" aria-labelledby="h-3">
+  <h2 id="h-3"><span class="n">3</span>Before anyone asks</h2>
+  <p class="where">Week three. The advisor reads the course outline closely before meeting the instructor.</p>
+  <div class="q"><span class="lbl">The question</span>Which of these barriers did the course&rsquo;s design put there, and which are owed to Rowan individually?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="variability"><a href="https://www.accessiblelearninglabs.com/designing-for-variability">Time, Pacing and Deadlines as Design Variables</a> &mdash; a time limit is either part of what an assessment measures or a convention it inherited, and the two call for different responses. Generous time as a design choice does not reach every case.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Designing for Episodic and Fluctuating Conditions</a> &mdash; attendance policy and deadline architecture as program design, for the conditions most systems assume are stable.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Designing Out the Disclosure Requirement</a> &mdash; a flexible deadline that requires an email is a disclosure event; a built-in grace window is not.</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Essential Requirements and the Limits of Flexibility</a> &mdash; what a standard genuinely requires, separated from what it has inherited by convention, and articulated before any dispute rather than during one.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>Three findings go into the file. The one-absence rule and the fixed deadlines are design choices. A second permitted absence and a short grace window on submissions would have met two of Rowan&rsquo;s three requests with no letter, no disclosure and no advisor, and would have served the learners in the same room who will never make a request at all. Those two findings become a note for the instructor now and material for the seventh stop later.</p>
+    <p>The two findings have a place in the design framework they come from. Attendance and deadline architecture are matters of engagement in the Universal Design for Learning Guidelines; the form of the practical is a matter of action and expression (source <a href="#s23">23</a>). Human variability is the rule in any learning environment rather than the exception (source <a href="#s24">24</a>), which is why a design change made for one learner reaches many. It does not reach all: a grace window still has an edge, and a difficult stretch can outlast it. Design reduces the individual duty; it does not discharge it (source <a href="#s25">25</a>).</p>
+    <p>The timed practical is different. It may be measuring something, and whether it is cannot be settled by the advisor alone. It is held for the fifth stop. Design fixes what it can; what it cannot fix is owed individually; and the advisor can tell the two apart.</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-4" aria-labelledby="h-4">
+  <h2 id="h-4"><span class="n">4</span>When someone asks</h2>
+  <p class="where">Week three. Rowan comes in.</p>
+  <div class="q"><span class="lbl">The question</span>How is this conversation conducted so that it is safe and useful to Rowan, and what does the file actually establish?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">The Advising Conversation</a> &mdash; a designed encounter. Safety, transparency and choice built into its structure; barriers asked about without requiring a person to prove themselves again; the learner leaving better able to describe their own access requirements.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Reading Disability Documentation</a> &mdash; what a report can establish and what it cannot; the weight professional guidance gives to the learner&rsquo;s own account; the limits of a clinician&rsquo;s recommendation as evidence.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Documentation Requirements and Medical Gatekeeping</a> &mdash; what is actually required against what is routinely requested, and why cost and waiting time for a new assessment are barriers in their own right.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Responding to Distress and Making a Referral</a> &mdash; held in reserve. If the conversation turns, the pathway was designed in advance and the person in the room knows the limits of their role.</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Accommodation When the Learner Is Also an Employee</a> &mdash; two duties, two processes, one person. Rowan is a learner in one laboratory and an employee in another, and neither office holds the whole picture.</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Accessible Job Design for Student and Early-Career Employment</a> &mdash; essential requirements, applied to a posting. The department&rsquo;s appointment has requirements of its own, and whether they were ever written down decides how the second conversation goes.</li>
+      <li data-g="grounding"><a href="https://www.accessiblelearninglabs.com/grounding">Intersectionality in Accommodation: Who Reaches the Office</a> &mdash; the learners who are not in this room, and why. Rowan found the office; the conversation is conducted knowing that many do not.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>The conversation is built on the principles of a trauma-informed approach: safety; trustworthiness and transparency; collaboration and mutuality; empowerment, voice and choice; and attention to the cultural, historical and gender context the person brings (source <a href="#s21">21</a>). In practice that means Rowan is told at the outset what will be asked, why, who will see it and what happens next, and is not asked to establish anything about their health again.</p>
+    <p>The three-year-old letter is read for what it establishes, that Rowan&rsquo;s health is ongoing and varies over time, and not for what it cannot, which is how a difficult stretch meets this laboratory in this term. Professional guidance holds that a learner&rsquo;s own report may be sufficient to establish a need for accommodation, and that a report that is rich, consistent and detailed may be the most valuable source of information there is (source <a href="#s16">16</a>). Rowan&rsquo;s own account does that work: what a difficult stretch does to standing at a bench, to reading, to timed tasks, and how long one lasts. Weighed for its clarity and consistency with the letter and the course outline, that account is recorded as the functional picture of the case.</p>
+    <p>Rowan is offered choices, and makes them. Offered either extensions on request whenever a difficult stretch comes or a standing two-day extension on every deadline, Rowan chooses the standing extension, because writing to ask in the middle of a bad week is itself the barrier. Rowan chooses that the instructor be told the arrangements and nothing else. Asked whether anything else this term meets the same pattern, Rowan mentions the teaching appointment. The advisor explains that the access office decides academic accommodation only; that the Human Rights Code reaches employment as well as education, so the department owes Rowan a duty as an employer through its own process (source <a href="#s7">7</a>); and offers to help connect the two. Rowan decides to raise it with the department and asks for the academic arrangements in writing, so there is one document to point to.</p>
+    <p>The notes record the process, not Rowan&rsquo;s health: the date, what was asked, what was offered, what Rowan chose, what was declined and why, who may see it. If distress surfaces in the room, the pathway was designed in advance, the person present knows the limits of a non-clinical role, and a follow-up with Rowan is arranged (source <a href="#s22">22</a>).</p>
+    <p class="contested"><span class="lbl">Where practice disagrees</span>Whether Rowan should be sent for updated documentation. Many offices would require it, and a letter that is silent on attendance and deadlines is, on its face, limited in scope. This path follows the guidance: third-party documentation is sought when the learner cannot explain how the disability creates the barrier and how the requested accommodation would address it, and institutions should not set blanket limits on the age of documentation (source <a href="#s16">16</a>). Rowan can explain both. A recommendation of &ldquo;flexibility&rdquo; does not need a clinician to translate it into an attendance rule; the advisor and the learner do that together, and the record says why no further documentation was required.</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-5" aria-labelledby="h-5">
+  <h2 id="h-5"><span class="n">5</span>The hard call</h2>
+  <p class="where">Week four. The instructor replies that the practical is timed because speed is part of laboratory competence: reactions have to be run within a window, the room is booked for three hours, and a different day means a different practical.</p>
+  <div class="q"><span class="lbl">The question</span>Is time part of what the practical measures, or a convention it inherited? And what accommodation preserves the measurement?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Essential Requirements and the Limits of Flexibility</a> &mdash; the most demanding judgement in the field: when flexibility preserves what is being measured, and when it alters it.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Accommodated Exams and Assessment Logistics</a> &mdash; changing the conditions of an assessment without changing what it measures; how an accommodation carries into a laboratory exam; what the research on extended time does and does not show; what happens when a person&rsquo;s health fails during the exam itself.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Reasoning Through an Accommodation Request</a> &mdash; invented cases worked from first contact to a recorded decision, and the record each decision leaves: what is written down, what is kept out, who may see it.</li>
+      <li data-g="sectors"><a href="https://www.accessiblelearninglabs.com/sectors-and-participation">Access in Studio, Shop and Lab-Based Learning</a> &mdash; protecting the safety requirements that are genuine while examining the ones that are only habit.</li>
+      <li data-g="rights"><a href="https://www.accessiblelearninglabs.com/rights">Eliminating Construct-Irrelevant Barriers in Assessment</a> &mdash; the validity principle underneath all of it: a result should reflect capability, not incidental obstacles.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>The advisor does not decide what chemistry requires, and does not accept the instructor&rsquo;s first answer either. Validity belongs to the interpretation of a score, not to the test itself (source <a href="#s10">10</a>), so the question is what the practical&rsquo;s score is taken to mean. Put in plain words, as Meiorin asks it: which parts of the practical are timed because the chemistry is timed, and which because the room is booked? Asked that way, the instructor separates them. Two of the six tasks are time-critical; a reaction has to be quenched inside a short window or the result is meaningless. The three-hour total is the booking. The first is a bona fide requirement of the standard; the second is construct-irrelevant variance, a feature of the test that affects the score without being part of what is measured (sources <a href="#s1">1</a>, <a href="#s11">11</a>).</p>
+    <p>The decision follows the line that answer draws. The two time-critical tasks keep the pace the chemistry sets, for every learner. The session as a whole is extended by the ratio already in Rowan&rsquo;s letter, and that ratio is itself examined rather than inherited: a pan-Canadian study found the common 150 per cent allowance usually set at intake from policy or custom rather than from evidence about the person (source <a href="#s15">15</a>), and the research on extended time supports individual decisions over standing formulas (source <a href="#s14">14</a>). A deferred sitting is arranged in advance in case a difficult stretch falls on the day, with a stated rule for who calls it and by when, so that nobody is deciding in the corridor. The record carries the reasoning: what was essential, how that was established and by whom, what was offered, what was declined and why. A decision reasoned this way is an argument that links the performance to the inference drawn from it (source <a href="#s12">12</a>).</p>
+    <p class="contested"><span class="lbl">Where practice disagrees</span>Whether a deferred practical is still the same assessment. Comparability across conditions of administration is something to be argued, not asserted: the deferred sitting samples the same content, sets the same tasks at the same pace, and is no easier or harder (sources <a href="#s10">10</a>, <a href="#s13">13</a>). This path holds that a practical meeting those conditions is the same assessment, and the record says so in those terms. What remains is effort. Effort can choose between two accommodations that both work; it cannot defeat the only one that does, short of undue hardship (source <a href="#s5">5</a>), and effort is a question for the sixth stop.</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-6" aria-labelledby="h-6">
+  <h2 id="h-6"><span class="n">6</span>Making it real</h2>
+  <p class="where">Weeks five to twelve. The letter is issued. Now it has to happen.</p>
+  <div class="q"><span class="lbl">The question</span>An accommodation has been approved. What has to occur, and who has to do it, for it to exist on the day?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Working with Accommodation Offices and Access Advisors</a> &mdash; the implementation gap, in which an approved accommodation is recorded and then not delivered, and what a referral has to carry to be usable.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Accommodated Exams and Assessment Logistics</a> &mdash; this time for its second half: booking, invigilator training, communication with learners and instructors, and the decisions required when timing, technology or a person&rsquo;s health fails during an exam.</li>
+      <li data-g="standards"><a href="https://www.accessiblelearninglabs.com/standards-and-technical-practice">Delivering Accommodated Exams in a Learning Platform</a> &mdash; the midterm is online. Platform time settings, lockdown browsers and proctoring can conflict with a learner&rsquo;s set-up; a test routine run in advance catches it.</li>
+      <li data-g="standards"><a href="https://www.accessiblelearninglabs.com/standards-and-technical-practice">Interpreting, Live Captioning, Note-Taking and Alternate Formats</a> &mdash; not needed in Rowan&rsquo;s case, and read anyway, because the same lesson applies: a service arranged late, or without the materials, may not provide the access it was approved to provide.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Funding Routes for Disability-Related Supports and Equipment</a> &mdash; for the cases where an approved accommodation depends on something the learner has to pay for.</li>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change">Training and Supervising Student Access Staff</a> &mdash; the invigilator or laboratory aide who is in the room on the day, and what they need to be able to do on a first shift.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>Delivery began before the letter. Between the request in week two and the letter in week five, Rowan was told in writing what had been agreed so far and what was still open, and the deadline arrangement was applied in the meantime; an accommodation process that leaves a person without an answer while it runs is one of the ways the process stalls (source <a href="#s2">2</a>).</p>
+    <p>Every line of the letter has an owner, a date and a check. The instructor confirms the deadline arrangement on the course site, so Rowan does not have to ask twice. The exam service books the midterm with extended time and runs the platform check with Rowan&rsquo;s own set-up two weeks out, because conformance to the accessibility guidelines is defined against the assistive technology a person actually uses, and a locked-down browser that blocks it is a failure of the exam, not of the learner (sources <a href="#s28">28</a>, <a href="#s29">29</a>). The laboratory coordinator holds the deferred slot, and the teaching assistant on the day of the practical knows the rule for calling it. In week seven the advisor checks that the midterm happened as approved, and the file is not closed until each line has been delivered or declined with a reason. An accommodation that is recorded and not delivered has discharged nothing (source <a href="#s17">17</a>).</p>
+  </div>
+</section>
+
+<section class="stop" id="stop-7" aria-labelledby="h-7">
+  <h2 id="h-7"><span class="n">7</span>Changing the institution</h2>
+  <p class="where">December. The term is over. Rowan sat the practical on the scheduled day, used one deferred deadline, and missed no further laboratories.</p>
+  <div class="q"><span class="lbl">The question</span>What did this one request show about the course, the service and the institution, and what changes so that the next learner does not have to ask?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change">Faculty Development That Changes Accessible Practice</a> &mdash; whether the gap is capability, opportunity or motivation, and the orientation, guidance and point-of-need supports through which an access service explains itself each term.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations">Designing for Episodic and Fluctuating Conditions</a> &mdash; read again, now as the design brief for the course outline the instructor writes next year.</li>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change">Professional Standards for Disability Services</a> &mdash; the CAS and AHEAD standards read as evaluation criteria, and how a self-study against them is designed.</li>
+      <li data-g="standards"><a href="https://www.accessiblelearninglabs.com/standards-and-technical-practice">Evaluating Whether Design Reduced Barriers</a> &mdash; measuring whether a design change lowered barriers rather than assuming it did.</li>
+      <li data-g="sectors"><a href="https://www.accessiblelearninglabs.com/sectors-and-participation">Access at Admission and Transition</a> and <a href="https://www.accessiblelearninglabs.com/accommodations">Peer Mentorship as Access Infrastructure</a> &mdash; the interval before the system knows a learner, and the middle ground between a learner and an office where most of the daily work of access happens.</li>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change">Institutional Accessibility Planning as a Change Program</a> &mdash; where the pattern across cases is taken, and what turns a published commitment into changed practice.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>Three things leave the file. For the instructor: a note that a second permitted absence and a two-day grace window would have met two of the three requests with no letter at all, and that the essential-requirements reasoning written for the practical now exists and belongs in next year&rsquo;s course outline and in the program&rsquo;s published requirements, where every learner can read it. The note is about the design of the course; it is not an evaluation of the person who taught it.</p>
+    <p>For the service: the case is counted. How many requests this term were an attendance rule or a deadline policy meeting capacity that varies over time? The count shows how often; Rowan&rsquo;s file shows why. Both are evidence, and the professional standards for a disability service ask it to gather exactly this kind of evidence about its own practice and to act on it (sources <a href="#s17">17</a>, <a href="#s18">18</a>).</p>
+    <p>For the institution: the count goes to the accessibility plan with a proposal and a named sponsor. The provincial legislation requires the plan, a committee and a feedback mechanism (source <a href="#s8">8</a>); ownership and sequencing are what the proposal adds. One more line goes with it: Rowan&rsquo;s academic and employment arrangements ran through two processes that do not share a file, and a learner who is also an employee should not have to explain the same need twice. The proposal asks that the access office and the departments that employ learners agree how one request can reach both, with the learner&rsquo;s consent. Next year the service measures two things, not one: whether the outline changed, and whether the requests fell. A fall in requests without the first check proves little, and a change in the count can have more than one cause. Measured this way, a request handled well becomes evidence, and evidence counted across cases becomes the case for the next change.</p>
+  </div>
+</section>
+
+<section class="after" aria-labelledby="h-after">
+  <h2 id="h-after">After the seventh stop</h2>
+  <p>The same seven stops, followed from the other three positions, are the other paths: <a href="https://www.accessiblelearninglabs.com/designing-for-inclusion">designing for inclusion</a> (the leader&rsquo;s), <a href="https://www.accessiblelearninglabs.com/working-from-the-account">working from the account</a> (the participant&rsquo;s) and <a href="https://www.accessiblelearninglabs.com/acting-before-disclosure">acting before disclosure</a> (the expert&rsquo;s). The rest of the landscape is reached from the same place:</p>
+  <ul>
+    <li><a href="https://www.accessiblelearninglabs.com/landscape">The map</a>, where resources sit by group and by the sources and themes they share.</li>
+    <li><a href="https://accessiblelearninglabs.github.io/accessibility-udl-specialization/accessibility-udl-landscape-linear.html">The full list</a>, in reading order, with no diagram or scripting.</li>
+  </ul>
+  <p>Every resource on this path is practised. Its status on the landscape shows whether a public resource about it exists yet; until each is published, its link opens the group it belongs to.</p>
+</section>
+
+<section class="after" id="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <p>The works the path rests on, grouped by kind. Court decisions, legislation and standards link to the primary text where it is published openly; books and articles are cited in full so they can be found in any library catalogue.</p>
+
+  <h3 class="bib-h">Decisions of the Supreme Court of Canada</h3>
+  <ol class="bib">
+    <li id="s1" value="1">British Columbia (Public Service Employee Relations Commission) v. BCGSEU, [1999] 3 S.C.R. 3, 1999 CanLII 652 (SCC), the &ldquo;Meiorin&rdquo; decision. <a class="ext" href="https://www.canlii.org/en/ca/scc/doc/1999/1999canlii652/1999canlii652.html">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s2" value="2">Central Okanagan School District No. 23 v. Renaud, [1992] 2 S.C.R. 970, 1992 CanLII 81 (SCC). <a class="ext" href="https://www.canlii.org/en/ca/scc/doc/1992/1992canlii81/1992canlii81.html">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s3" value="3">British Columbia (Superintendent of Motor Vehicles) v. British Columbia (Council of Human Rights), [1999] 3 S.C.R. 868, 1999 CanLII 646 (SCC), the &ldquo;Grismer&rdquo; decision.</li>
+    <li id="s4" value="4">Eldridge v. British Columbia (Attorney General), [1997] 3 S.C.R. 624.</li>
+    <li id="s5" value="5">Hydro-Qu&eacute;bec v. Syndicat des employ&eacute;-e-s de techniques professionnelles et de bureau d&rsquo;Hydro-Qu&eacute;bec, section locale 2000 (SCFP-FTQ), 2008 SCC 43, [2008] 2 S.C.R. 561.</li>
+    <li id="s6" value="6">Moore v. British Columbia (Education), 2012 SCC 61, [2012] 3 S.C.R. 360. <a class="ext" href="https://decisions.scc-csc.ca/scc-csc/scc-csc/en/12680/1/document.do">Open source<span class="exti" aria-hidden="true"></span></a></li>
+  </ol>
+
+  <h3 class="bib-h">Legislation and human rights policy</h3>
+  <ol class="bib">
+    <li id="s7" value="7">Human Rights Code, R.S.B.C. 1996, c. 210. Province of British Columbia.</li>
+    <li id="s8" value="8">Accessible British Columbia Act, S.B.C. 2021, c. 19. Province of British Columbia.</li>
+    <li id="s9" value="9">Ontario Human Rights Commission (2018). Policy on accessible education for students with disabilities. Toronto: OHRC. <a class="ext" href="https://www.ohrc.on.ca/en/news-center/ohrc-releases-new-policy-and-recommendations-accessible-education">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s30" value="30">Freedom of Information and Protection of Privacy Act, R.S.B.C. 1996, c. 165. Province of British Columbia.</li>
+  </ol>
+
+  <h3 class="bib-h">Assessment and validity</h3>
+  <ol class="bib">
+    <li id="s10" value="10">American Educational Research Association, American Psychological Association, &amp; National Council on Measurement in Education (2014). Standards for Educational and Psychological Testing. Washington, DC: American Educational Research Association.</li>
+    <li id="s11" value="11">Messick, S. (1995). &ldquo;Validity of Psychological Assessment: Validation of Inferences from Persons&rsquo; Responses and Performances as Scientific Inquiry into Score Meaning.&rdquo; American Psychologist, 50(9), 741&ndash;749.</li>
+    <li id="s12" value="12">Kane, M. T. (2013). &ldquo;Validating the Interpretations and Uses of Test Scores.&rdquo; Journal of Educational Measurement, 50(1), 1&ndash;73.</li>
+    <li id="s13" value="13">Sireci, S. G., Scarpati, S. E., &amp; Li, S. (2005). &ldquo;Test Accommodations for Students with Disabilities: An Analysis of the Interaction Hypothesis.&rdquo; Review of Educational Research, 75(4), 457&ndash;490.</li>
+    <li id="s14" value="14">Lovett, B. J. (2010). &ldquo;Extended Time Testing Accommodations for Students with Disabilities: Answers to Five Fundamental Questions.&rdquo; Review of Educational Research, 80(4), 611&ndash;638. <a class="ext" href="https://doi.org/10.3102/0034654310364063">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s15" value="15">Sokal, L., &amp; Wilson, A. (2017). &ldquo;In the Nick of Time: A Pan-Canadian Examination of Extended Testing Time Accommodation in Post-secondary Schools.&rdquo; Canadian Journal of Disability Studies, 6(1), 28&ndash;62. <a class="ext" href="https://doi.org/10.15353/cjds.v6i1.332">Open source<span class="exti" aria-hidden="true"></span></a></li>
+  </ol>
+
+  <h3 class="bib-h">Professional standards for disability services</h3>
+  <ol class="bib">
+    <li id="s16" value="16">Association on Higher Education And Disability (2012). Supporting Accommodation Requests: Guidance on Documentation Practices. Huntersville, NC: AHEAD. <a class="ext" href="https://www.ahead.org/professional-resources/accommodations/documentation">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s17" value="17">Association on Higher Education And Disability. Program Domains, Standards, and Performance Indicators. <a class="ext" href="https://www.ahead.org/professional-resources/program-standards-ethics">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s18" value="18">Council for the Advancement of Standards in Higher Education (2023). CAS Professional Standards for Higher Education (11th ed.). Washington, DC: CAS.</li>
+  </ol>
+
+  <h3 class="bib-h">Disability, functioning and wellbeing</h3>
+  <ol class="bib">
+    <li id="s19" value="19">World Health Organization (2001). International Classification of Functioning, Disability and Health (ICF). Geneva: WHO. <a class="ext" href="https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s20" value="20">O&rsquo;Brien, K. K., Bayoumi, A. M., Strike, C., Young, N. L., &amp; Davis, A. M. (2008). &ldquo;Exploring Disability from the Perspective of Adults Living with HIV/AIDS: Development of a Conceptual Framework.&rdquo; Health and Quality of Life Outcomes, 6:76.</li>
+    <li id="s21" value="21">Substance Abuse and Mental Health Services Administration (2014). SAMHSA&rsquo;s Concept of Trauma and Guidance for a Trauma-Informed Approach. HHS Publication No. (SMA) 14-4884. Rockville, MD: SAMHSA.</li>
+    <li id="s22" value="22">CSA Group (2020). CSA Z2003:20, Mental Health and Well-Being for Post-Secondary Students. National Standard of Canada.</li>
+  </ol>
+
+  <h3 class="bib-h">Universal Design for Learning and disability studies</h3>
+  <ol class="bib">
+    <li id="s23" value="23">CAST (2024). Universal Design for Learning Guidelines, version 3.0. <a class="ext" href="https://udlguidelines.cast.org">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s24" value="24">Meyer, A., Rose, D. H., &amp; Gordon, D. (2014). Universal Design for Learning: Theory and Practice. Wakefield, MA: CAST Professional Publishing.</li>
+    <li id="s25" value="25">Rose, D. H., Harbour, W. S., Johnston, C. S., Daley, S. G., &amp; Abarbanell, L. (2006). &ldquo;Universal Design for Learning in Postsecondary Education: Reflections on Principles and Their Application.&rdquo; Journal of Postsecondary Education and Disability, 19(2), 135&ndash;151.</li>
+    <li id="s26" value="26">Oliver, M. (1990). The Politics of Disablement. Basingstoke: Macmillan.</li>
+    <li id="s27" value="27">Dolmage, J. T. (2017). Academic Ableism: Disability and Higher Education. Ann Arbor: University of Michigan Press.</li>
+  </ol>
+
+  <h3 class="bib-h">Accessibility standards</h3>
+  <ol class="bib">
+    <li id="s28" value="28">W3C (2023). Web Content Accessibility Guidelines (WCAG) 2.2. W3C Recommendation. <a class="ext" href="https://www.w3.org/TR/WCAG22/">Open source<span class="exti" aria-hidden="true"></span></a></li>
+    <li id="s29" value="29">CAN/ASC-EN 301 549:2024. Accessibility Requirements for ICT Products and Services. Accessibility Standards Canada. <a class="ext" href="https://accessible.canada.ca/creating-accessibility-standards/canasc-en-301-5492024-accessibility-requirements-ict-products-and-services">Open source<span class="exti" aria-hidden="true"></span></a></li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <p class="meta">
+    <span>Accessible Learning Labs</span>
+    <span>Accessibility · Universal Design for Learning</span>
+    <span>Reviewed <time datetime="2026-10">October 2026</time></span>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

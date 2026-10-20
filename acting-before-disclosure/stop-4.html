@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Acting before disclosure · 4 · When someone asks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#ffffff; --sunk:#f7f8f9;
+  --ink:#43525a; --ink-strong:#303e44; --muted:#576a73; --stone:#66747b;
+  --hair:#d5dde1; --hair-soft:#eef1f2; --edge:#7b8990; --accent:#477ba8;
+  --focus:#303e44;
+  --sans:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shell:74rem;
+}
+[data-g="grounding"]{--g:#477ba8;}
+[data-g="rights"]{--g:#567a9d;}
+[data-g="accommodations"]{--g:#347cb1;}
+[data-g="variability"]{--g:#617993;}
+[data-g="standards"]{--g:#69788b;}
+[data-g="institutions"]{--g:#717781;}
+[data-g="sectors"]{--g:#767677;}
+[data-g="services"]{--g:#303e44;}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3{color:var(--ink-strong);line-height:1.25;font-weight:600;margin:0;}
+p{margin:0 0 .85em;}
+a{color:var(--ink-strong);text-underline-offset:3px;text-decoration-thickness:1px;}
+a:hover{text-decoration-thickness:2px;}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;
+  box-shadow:0 0 0 6px rgba(255,255,255,.95);border-radius:3px;}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink-strong);color:#fff;
+  padding:12px 18px;z-index:60;text-decoration:none;border-radius:0 0 4px 0;}
+.skip:focus{left:0;}
+
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 20px;}
+.masthead{padding:52px 0 12px;}
+.eyebrow{font-size:11px;letter-spacing:.16em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--muted);margin:0 0 14px;}
+h1{font-size:clamp(1.85rem,4.2vw,2.7rem);letter-spacing:-.01em;max-width:24ch;}
+h1 em{display:block;font-style:italic;font-weight:400;color:var(--muted);margin-top:.15em;}
+.rule{height:3px;width:64px;background:var(--accent);margin:20px 0 22px;border-radius:2px;}
+.lede{font-size:1.09rem;max-width:64ch;}
+.orient{max-width:64ch;color:var(--muted);font-size:.97rem;
+  border-left:3px solid var(--hair);padding:2px 0 2px 16px;margin:22px 0 0;}
+
+.ways{margin:38px 0 0;padding:0;list-style:none;display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:64rem;}
+.ways li{border:1px solid var(--hair-soft);border-radius:8px;padding:16px 18px;background:var(--sunk);}
+.ways .lt{display:block;margin-bottom:6px;}
+.ways p{margin:0;font-size:.95rem;color:var(--ink);}
+
+.sec-mark,.lt,.lbl{font-size:10px;letter-spacing:.14em;word-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--stone);}
+.sec-mark{margin:0 0 10px;display:block;}
+
+main{padding:56px 0 0;}
+.note{max-width:66ch;margin:0 0 44px;padding:18px 20px 8px;border:1px solid var(--hair);border-left:4px solid var(--ink-strong);border-radius:8px;background:var(--sunk);}
+.note h2{font-size:1.05rem;margin:0 0 10px;}
+.note p{font-size:.96rem;}
+.case{max-width:66ch;}
+.case h2{font-size:1.4rem;margin:0 0 14px;}
+
+nav.stops{margin:46px 0 0;max-width:66ch;}
+nav.stops ol{margin:10px 0 0;padding:0 0 0 1.4em;columns:2;column-gap:34px;}
+nav.stops li{break-inside:avoid;margin:0 0 6px;font-size:.95rem;}
+
+.stop{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;scroll-margin-top:20px;}
+.stop h2{font-size:1.4rem;display:flex;align-items:baseline;gap:14px;}
+.stop h2 .n{font-size:.8rem;letter-spacing:.14em;color:var(--stone);font-weight:600;}
+.where{color:var(--muted);font-style:italic;margin:10px 0 18px;}
+.q{border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:0 0 18px;font-size:1.04rem;color:var(--ink-strong);}
+.q .lbl{display:block;margin-bottom:4px;}
+.read{margin:0 0 18px;}
+.read .lbl{display:block;margin-bottom:8px;}
+.read ul{list-style:none;padding:0;margin:0;}
+.read li{padding:0 0 0 18px;position:relative;margin:0 0 9px;font-size:.96rem;}
+.read li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:100px;background:var(--g,var(--stone));}
+.read li a{font-weight:500;}
+.good .lbl{display:block;margin-bottom:6px;}
+.good{background:var(--sunk);border-radius:8px;padding:16px 18px 6px;}
+.contested{margin:14px 0 0;font-size:.95rem;color:var(--muted);}
+.contested .lbl{color:var(--stone);margin-right:6px;}
+
+.after{border-top:1px solid var(--hair-soft);padding:44px 0 0;margin-top:44px;max-width:66ch;}
+.after h2{font-size:1.4rem;margin:0 0 12px;}
+.after ul{padding-left:1.2em;margin:8px 0 0;}
+.after li{margin:0 0 6px;}
+
+.bib-h{font-size:1rem;margin:30px 0 10px;color:var(--muted);font-weight:600;}
+ol.bib{padding-left:2.1em;margin:0;max-width:70ch;}
+ol.bib li{margin:0 0 11px;font-size:.92rem;line-height:1.5;padding-left:.3em;scroll-margin-top:20px;}
+.ext{white-space:nowrap;}
+.exti{display:inline-block;width:.68em;height:.68em;margin-left:.3em;vertical-align:-.02em;
+  background-color:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 3h8.5v8.5h-2V6.4L4.4 13 3 11.6 9.6 5H4.5z'/%3E%3C/svg%3E") no-repeat center/contain;}
+
+footer{margin:64px 0 0;border-top:1px solid var(--hair);padding:26px 0 60px;color:var(--muted);font-size:.88rem;}
+.meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;}
+
+@media (max-width:640px){
+  nav.stops ol{columns:1;}
+}
+@media (max-width:420px){
+  body{font-size:16px;}
+  .wrap{padding:0 16px;}
+}
+@media (prefers-contrast:more){
+  :root{--hair:#5c6a71;--hair-soft:#9aa5ab;--muted:#3c4a52;--stone:#4a575e;}
+}
+@media (forced-colors:active){
+  .read li::before,.rule,.exti{forced-color-adjust:none;background:CanvasText;}
+}
+@media print{
+  .skip{display:none !important;}
+  body{font-size:11pt;}
+  .stop,.good{break-inside:avoid;}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#555;}
+}
+
+.wrap{padding:0;}
+.stop{border-top:0;padding:0;margin-top:0;}
+.note{margin:0 0 32px;}
+</style>
+</head>
+<body data-embed="stop-4">
+<div class="wrap">
+<main>
+<section class="stop" id="stop-4" aria-labelledby="h-4">
+  <h2 id="h-4"><span class="n">4</span>When someone asks</h2>
+  <p class="where">Week ten. Jules comes to office hours.</p>
+  <div class="q"><span class="lbl">The question</span>How is this conversation conducted so that it is safe and useful to Jules, within the limits of an instructor&rsquo;s role?</div>
+  <div class="read">
+    <span class="lbl">What to read</span>
+    <ul>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">The Advising Conversation</a> &mdash; written for advisors, and the structure travels: safety, transparency and choice built into the encounter; barriers asked about without requiring a person to prove themselves; the learner leaving better able to describe what they need. An instructor is not an advisor, and the shape of a good conversation is the same.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">Responding to Distress and Making a Referral</a> &mdash; held in reserve. If the conversation turns, the pathway was designed in advance and the person in the room knows the limits of their role.</li>
+      <li data-g="grounding"><a href="https://www.accessiblelearninglabs.com/grounding" target="_top">Disability Etiquette and Communication in Learning Environments</a> &mdash; professional practice, not a list of prohibitions: how to talk about what a learner has chosen to describe, and how not to.</li>
+      <li data-g="institutions"><a href="https://www.accessiblelearninglabs.com/institutions-governance-and-change" target="_top">Inclusive Facilitation &amp; Capacity Building</a> &mdash; facilitation as a professional stance. The conduct an instructor brings to a reply at eleven at night is the conduct a facilitator brings to a room: the person decides what they share, and the expert makes it safe to decide either way.</li>
+      <li data-g="grounding"><a href="https://www.accessiblelearninglabs.com/grounding" target="_top">Intersectionality in Accommodation: Who Reaches the Office</a> &mdash; the learners who are not in this room, and why. Jules wrote; many in the same hall will not, and the conversation is conducted knowing that.</li>
+      <li data-g="accommodations"><a href="https://www.accessiblelearninglabs.com/accommodations" target="_top">Peer Mentorship as Access Infrastructure</a> &mdash; the middle ground between a learner and an office, where a first-year learner who has never registered anywhere can find out what registering is like from someone who has.</li>
+    </ul>
+  </div>
+  <div class="good">
+    <span class="lbl">A good decision looks like</span>
+    <p>The conversation is built on the principles of a trauma-informed approach: safety; trustworthiness and transparency; collaboration and mutuality; empowerment, voice and choice; and attention to the context the person brings (source 18). In practice that means Jules is told at the outset what the instructor can and cannot do, what has already been done, and that nothing said will go further. The instructor asks about tasks, not the reason: what a bad week makes difficult, what helped in the weeks that were manageable, what the next three weeks look like. The instructor does not ask what the diagnosis is, when it was made, or what treatment Jules is receiving, because none of that is needed to arrange a deadline or a recording (source 8), and because the national standard for post-secondary student mental health and well-being asks institutions to make it safe to ask for help rather than to require an explanation (source 19).</p>
+    <p>The access office is mentioned once, as the route to the exam accommodation the instructor cannot grant, and Jules is told what the process involves and where a peer who has been through it can be found. Whether to register is Jules&rsquo;s decision, and the instructor does not make it a condition of anything already offered. If distress surfaces in the room, the pathway was designed in advance: the instructor knows the campus services, knows what a non-clinical role can and cannot do, and arranges to check in with Jules the following week (source 19).</p>
+    <p>The instructor&rsquo;s notes record the arrangements, not the reason: the date, what was agreed, what Jules chose. They are kept where no one else reads them.</p>
+    <p class="contested"><span class="lbl">Where practice disagrees</span>Whether an instructor should encourage a reluctant learner to register with the office at all. Some would press, on the ground that a letter protects the learner in every course, not only this one. This path holds that the choice to disclose to an office is the learner&rsquo;s, that pressing turns an open door into a condition, and that the instructor&rsquo;s part is to make sure Jules knows the route exists, what it involves, and that the arrangements already made do not depend on taking it.</p>
+  </div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+  function send(){ try{ parent.postMessage({startHereEmbed:true, id:document.body.dataset.embed, height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  window.addEventListener('load',send); window.addEventListener('resize',send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+})();
+</script>
+</body>
+</html>
