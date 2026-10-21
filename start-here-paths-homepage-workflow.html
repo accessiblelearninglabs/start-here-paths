@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Start here paths · The seven stops as a cycle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#ffffff; --sunk:#f7f8f9;
+  --ink:#43525a; --ink-strong:#303e44; --muted:#576a73; --stone:#66747b;
+  --hair:#d5dde1; --hair-soft:#eef1f2;
+  --accent:#477ba8; --deep:#347cb1; --mid:#567a9d; --soft:#617993; --pale:#dbe6f0;
+  --sans:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;background:transparent;}
+body{color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+:focus-visible{outline:3px solid var(--ink-strong);outline-offset:3px;border-radius:50%;}
+
+.wrap{max-width:640px;margin:0 auto;padding:8px 8px 16px;}
+.lbl{font-size:10px;letter-spacing:.14em;word-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);margin:0 0 10px;}
+
+.cycle{position:relative;width:78%;margin:0 auto;aspect-ratio:1/1;}
+@media (max-width:479px){ .cycle{width:92%;} }
+.cycle svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.arc{fill:none;stroke:#b9c6cf;stroke-width:1;stroke-linecap:butt;transition:stroke .2s;}
+.arc.on{stroke:var(--accent);}
+.arc.loop.on{stroke:var(--deep);}
+.head{fill:#b9c6cf;transition:fill .2s;}
+.head.on{fill:var(--accent);}
+.head.loop.on{fill:var(--deep);}
+
+.stop{position:absolute;width:13%;aspect-ratio:1/1;transform:translate(-50%,-50%);
+  border-radius:50%;border:2px solid var(--accent);background:var(--paper);color:var(--accent);
+  font:600 clamp(14px,2.6vw,20px)/1 var(--sans);cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;transition:background .18s,color .18s,border-color .18s,box-shadow .18s;}
+.stop:hover{background:var(--pale);}
+.stop[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 0 0 6px var(--pale);}
+.stop .t{position:absolute;white-space:normal;width:max-content;max-width:11ch;font:500 clamp(11px,1.9vw,14px)/1.2 var(--sans);color:var(--ink);pointer-events:none;}
+.stop[aria-pressed="true"] .t{color:var(--ink-strong);font-weight:600;}
+.stop[data-side="r"] .t{left:calc(100% + 10px);text-align:left;}
+.stop[data-side="l"] .t{right:calc(100% + 10px);text-align:right;}
+.stop[data-side="t"] .t{bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);}
+.stop[data-side="b"] .t{top:calc(100% + 8px);left:50%;transform:translateX(-50%);}
+
+.centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52%;text-align:center;pointer-events:none;}
+.centre .n{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent);margin:0 0 6px;}
+.centre .q{margin:0;font-size:clamp(13px,2.5vw,17px);line-height:1.35;color:var(--ink-strong);}
+.centre .f{margin:10px 0 0;font-size:clamp(11px,2vw,13px);line-height:1.6;color:var(--muted);}
+.centre .f span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--stone);margin-bottom:2px;}
+.centre .f a{pointer-events:auto;color:var(--accent);text-underline-offset:3px;margin:0 4px;}
+
+@media (max-width:479px){ .stop .t{display:none;} .centre{width:50%;} .centre .n{font-size:8px;letter-spacing:.08em;white-space:normal;line-height:1.3;} .centre .q{font-size:12px;line-height:1.3;} .centre .f{font-size:10.5px;line-height:1.45;margin-top:6px;} .centre .f span{font-size:8.5px;} .centre .f a{margin:0 2px;} }
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+@media (prefers-reduced-motion:reduce){ .arc,.head,.stop{transition:none;} }
+@media (prefers-contrast:more){ :root{--hair:#5c6a71;--muted:#3c4a52;--stone:#4a575e;--pale:#c5d5e5;} }
+@media (forced-colors:active){
+  .stop{border-color:ButtonText;color:ButtonText;background:ButtonFace;}
+  .stop[aria-pressed="true"]{background:Highlight;color:HighlightText;border-color:Highlight;box-shadow:none;}
+  .arc.on,.head.on{stroke:Highlight;fill:Highlight;}
+}
+</style>
+</head>
+<body data-embed="workflow">
+<div class="wrap">
+  <p class="lbl" id="cy-l">The seven stops every path follows</p>
+
+  <div class="cycle" role="group" aria-labelledby="cy-l" aria-describedby="cy-d">
+    <p class="vh" id="cy-d">Seven stops arranged in a circle, each leading to the next. The seventh leads back to the first, because a change to the institution shapes the next request. Select a stop to read its question, then follow it from any of the four positions.</p>
+    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <defs>
+        <marker id="m" viewBox="0 0 10 10" refX="6" refY="5" markerUnits="userSpaceOnUse" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path class="head" d="M0 1.5 L8 5 L0 8.5 z"/></marker>
+        <marker id="mon" viewBox="0 0 10 10" refX="6" refY="5" markerUnits="userSpaceOnUse" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path class="head on" d="M0 1.5 L8 5 L0 8.5 z"/></marker>
+        <marker id="mloop" viewBox="0 0 10 10" refX="6" refY="5" markerUnits="userSpaceOnUse" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path class="head loop on" d="M0 1.5 L8 5 L0 8.5 z"/></marker>
+      </defs>
+      <g id="arcs"></g>
+    </svg>
+    <div id="stops"></div>
+    <div class="centre" aria-live="polite">
+      <p class="n" id="c-n"></p>
+      <p class="q" id="c-q"></p>
+      <p class="f"><span>Follow it as the</span>
+        <a id="c-a1" href="https://www.accessiblelearninglabs.com/measuring-what-matters#stop-1" target="_top">practitioner</a>
+        <a id="c-a2" href="https://www.accessiblelearninglabs.com/designing-for-inclusion#stop-1" target="_top">leader</a>
+        <a id="c-a3" href="https://www.accessiblelearninglabs.com/working-from-the-account#stop-1" target="_top">participant</a>
+        <a id="c-a4" href="https://www.accessiblelearninglabs.com/acting-before-disclosure#stop-1" target="_top">expert</a></p>
+    </div>
+  </div>
+
+  <ol class="vh" aria-label="The seven stops in order">
+    <li>The frame</li><li>What is owed</li><li>Before anyone asks</li><li>When someone asks</li><li>The hard call</li><li>Making it real</li><li>Changing the institution, which leads back to the frame for the next request</li>
+  </ol>
+</div>
+
+<script>
+(function(){
+  var PAGES=['measuring-what-matters','designing-for-inclusion','working-from-the-account','acting-before-disclosure'];
+  var S=[
+    ['The frame','What is in front of me, and what is mine to decide?'],
+    ['What is owed','What the institution owes, and what each person is asked to do.'],
+    ['Before anyone asks','What design put there, and what is owed individually.'],
+    ['When someone asks','A conversation that is safe and useful to the person asking.'],
+    ['The hard call','What the assessment measures, and what preserves it.'],
+    ['Making it real','What has to happen, and who has to do it, for it to exist on the day.'],
+    ['Changing the institution','So the next person does not have to ask.']
+  ];
+  var N=S.length, R=33, C=50, side=['t','r','r','b','b','l','l'];
+  var stops=document.getElementById('stops'), arcs=document.getElementById('arcs');
+  var cn=document.getElementById('c-n'), cq=document.getElementById('c-q');
+  var ns='http://www.w3.org/2000/svg';
+  function pt(i,r){var a=-Math.PI/2+i*2*Math.PI/N;return [C+r*Math.cos(a),C+r*Math.sin(a)];}
+  function arcPath(i){
+    var g=0.25, a0=-Math.PI/2+i*2*Math.PI/N+g, a1=-Math.PI/2+(i+1)*2*Math.PI/N-g;
+    var p0=[C+R*Math.cos(a0),C+R*Math.sin(a0)], p1=[C+R*Math.cos(a1),C+R*Math.sin(a1)];
+    return 'M'+p0[0].toFixed(2)+' '+p0[1].toFixed(2)+' A'+R+' '+R+' 0 0 1 '+p1[0].toFixed(2)+' '+p1[1].toFixed(2);
+  }
+  var paths=[],btns=[];
+  for(var i=0;i<N;i++){
+    var p=document.createElementNS(ns,'path'); p.setAttribute('d',arcPath(i)); p.setAttribute('class','arc'+(i===N-1?' loop':'')); p.setAttribute('marker-end','url(#m)'); arcs.appendChild(p); paths.push(p);
+    var xy=pt(i,R), b=document.createElement('button'); b.type='button'; b.className='stop'; b.dataset.side=side[i];
+    b.style.left=xy[0]+'%'; b.style.top=xy[1]+'%'; b.setAttribute('aria-pressed','false');
+    b.setAttribute('aria-label','Stop '+(i+1)+', '+S[i][0]);
+    b.innerHTML='<span aria-hidden="true">'+(i+1)+'</span><span class="t" aria-hidden="true">'+S[i][0]+'</span>';
+    (function(k){ b.addEventListener('click',function(){select(k);}); })(i);
+    stops.appendChild(b); btns.push(b);
+  }
+  function select(k){
+    for(var i=0;i<N;i++){
+      btns[i].setAttribute('aria-pressed',i===k?'true':'false');
+      var on=i===k; paths[i].setAttribute('class','arc'+(i===N-1?' loop':'')+(on?' on':''));
+      paths[i].setAttribute('marker-end',on?(i===N-1?'url(#mloop)':'url(#mon)'):'url(#m)');
+    }
+    cn.textContent='Stop '+(k+1)+' of 7 · '+S[k][0];
+    cq.textContent=S[k][1];
+    for(var j=0;j<4;j++){ document.getElementById('c-a'+(j+1)).href='https://www.accessiblelearninglabs.com/'+PAGES[j]+'#stop-'+(k+1); }
+  }
+  stops.addEventListener('keydown',function(e){
+    var k=btns.indexOf(document.activeElement); if(k<0) return;
+    var n=null;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown') n=(k+1)%N;
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp') n=(k-1+N)%N;
+    if(e.key==='Home') n=0; if(e.key==='End') n=N-1;
+    if(n!==null){ e.preventDefault(); btns[n].focus(); select(n); }
+  });
+  select(0);
+
+  function send(){ try{ parent.postMessage({startHereEmbed:true, id:document.body.dataset.embed, height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  window.addEventListener('load',send); window.addEventListener('resize',send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+})();
+</script>
+</body>
+</html>
