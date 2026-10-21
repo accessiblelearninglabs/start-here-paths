@@ -20,10 +20,10 @@ html,body{margin:0;background:transparent;}
 body{color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;}
 :focus-visible{outline:3px solid var(--ink-strong);outline-offset:3px;border-radius:50%;}
 
-.wrap{max-width:640px;margin:0 auto;padding:8px 8px 16px;}
+.wrap{max-width:760px;margin:0 auto;padding:8px 8px 16px;}
 .lbl{font-size:10px;letter-spacing:.14em;word-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);margin:0 0 10px;}
 
-.cycle{position:relative;width:78%;margin:0 auto;aspect-ratio:1/1;}
+.cycle{position:relative;width:76%;margin:0 auto;aspect-ratio:1/1;}
 @media (max-width:479px){ .cycle{width:92%;} }
 .cycle svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
 .arc{fill:none;stroke:#b9c6cf;stroke-width:1;stroke-linecap:butt;transition:stroke .2s;}
@@ -33,7 +33,7 @@ body{color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-we
 .head.on{fill:var(--accent);}
 .head.loop.on{fill:var(--deep);}
 
-.stop{position:absolute;width:13%;aspect-ratio:1/1;transform:translate(-50%,-50%);
+.stop{position:absolute;width:11.5%;aspect-ratio:1/1;transform:translate(-50%,-50%);
   border-radius:50%;border:2px solid var(--accent);background:var(--paper);color:var(--accent);
   font:600 clamp(14px,2.6vw,20px)/1 var(--sans);cursor:pointer;padding:0;
   display:flex;align-items:center;justify-content:center;transition:background .18s,color .18s,border-color .18s,box-shadow .18s;}
@@ -46,14 +46,14 @@ body{color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-we
 .stop[data-side="t"] .t{bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);}
 .stop[data-side="b"] .t{top:calc(100% + 8px);left:50%;transform:translateX(-50%);}
 
-.centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52%;text-align:center;pointer-events:none;}
+.centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58%;text-align:center;pointer-events:none;}
 .centre .n{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent);margin:0 0 6px;}
-.centre .q{margin:0;font-size:clamp(13px,2.5vw,17px);line-height:1.35;color:var(--ink-strong);}
+.centre .q{margin:0;font-size:clamp(14px,2.6vw,19px);line-height:1.4;color:var(--ink-strong);}
 .centre .f{margin:10px 0 0;font-size:clamp(11px,2vw,13px);line-height:1.6;color:var(--muted);}
 .centre .f span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--stone);margin-bottom:2px;}
 .centre .f a{pointer-events:auto;color:var(--accent);text-underline-offset:3px;margin:0 4px;}
 
-@media (max-width:479px){ .stop .t{display:none;} .centre{width:50%;} .centre .n{font-size:8px;letter-spacing:.08em;white-space:normal;line-height:1.3;} .centre .q{font-size:12px;line-height:1.3;} .centre .f{font-size:10.5px;line-height:1.45;margin-top:6px;} .centre .f span{font-size:8.5px;} .centre .f a{margin:0 2px;} }
+@media (max-width:479px){ .stop .t{display:none;} .centre{width:56%;} .centre .n{font-size:8px;letter-spacing:.08em;white-space:normal;line-height:1.3;} .centre .q{font-size:12px;line-height:1.3;} .centre .f{font-size:10.5px;line-height:1.45;margin-top:6px;} .centre .f span{font-size:8.5px;} .centre .f a{margin:0 2px;} }
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 
 @media (prefers-reduced-motion:reduce){ .arc,.head,.stop{transition:none;} }
@@ -108,13 +108,13 @@ body{color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-we
     ['Making it real','What has to happen, and who has to do it, for it to exist on the day.'],
     ['Changing the institution','So the next person does not have to ask.']
   ];
-  var N=S.length, R=33, C=50, side=['t','r','r','b','b','l','l'];
+  var N=S.length, R=40, C=50, side=['t','r','r','b','b','l','l'];
   var stops=document.getElementById('stops'), arcs=document.getElementById('arcs');
   var cn=document.getElementById('c-n'), cq=document.getElementById('c-q');
   var ns='http://www.w3.org/2000/svg';
   function pt(i,r){var a=-Math.PI/2+i*2*Math.PI/N;return [C+r*Math.cos(a),C+r*Math.sin(a)];}
   function arcPath(i){
-    var g=0.25, a0=-Math.PI/2+i*2*Math.PI/N+g, a1=-Math.PI/2+(i+1)*2*Math.PI/N-g;
+    var g=0.2, a0=-Math.PI/2+i*2*Math.PI/N+g, a1=-Math.PI/2+(i+1)*2*Math.PI/N-g;
     var p0=[C+R*Math.cos(a0),C+R*Math.sin(a0)], p1=[C+R*Math.cos(a1),C+R*Math.sin(a1)];
     return 'M'+p0[0].toFixed(2)+' '+p0[1].toFixed(2)+' A'+R+' '+R+' 0 0 1 '+p1[0].toFixed(2)+' '+p1[1].toFixed(2);
   }
